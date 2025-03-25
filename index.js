@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import { connectDB } from "./src/database/db.js";
+import job from "./src/lib/cron.js";
 
 dotenv.config();
 
@@ -10,6 +11,7 @@ import bookRoutes from "./src/routes/book.routes.js";
 
 const app = express();
 
+job.start();
 app.use(express.json());
 app.use(cors());
 

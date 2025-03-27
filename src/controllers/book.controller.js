@@ -23,7 +23,7 @@ export const createBook = async (req, res) => {
     });
 
     await newBook.save();
-    res.status(200).json(newBook);
+    res.status(201).json(newBook);
   } catch (error) {
     console.error("Error creating Book", error);
     return res.status(500).json({ message: "Failed to create book" });
